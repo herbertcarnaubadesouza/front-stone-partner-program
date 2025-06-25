@@ -1,0 +1,153 @@
+.container {
+  background-image: url("/formBackground.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altera para garantir que ocupe a altura total da tela */
+  padding: 20px; /* Adiciona padding para evitar o corte das bordas */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; /* Define um máximo para a largura do formulário */
+  height: 100%;
+  max-height: 80vh; /* Define um máximo para a altura do formulário */
+  overflow-y: auto; /* Adiciona rolagem vertical */
+  padding: 20px;
+}
+
+.images {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 50px 0px #000;
+  background-color: #212936;
+  padding-inline: 40px;
+  border-radius: 50px;
+  overflow-y: auto;
+  h1 {
+    text-align: center;
+    padding-block: 30px;
+    color: #0fcc7d;
+    font-family: Mohave;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    padding-block: 10px;
+    width: 100%;
+    background: #121826;
+    color: #6c727f;
+    border: none;
+    border-radius: 22px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  button:hover {
+    background: #000;
+  }
+}
+
+.field {
+  margin-bottom: 28px;
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-family: Mohave;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding-block: 12px;
+    border-radius: 22px;
+    background-color: #6c727f;
+    font-family: Mohave;
+    border: none;
+    padding-inline: 20px;
+  }
+  .input::placeholder {
+    font-family: Mohave;
+    color: #fff;
+    font-size: 16px;
+  }
+  .radioContainer {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .radioGroup {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .radioGroup input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4a90e2; /* Primary color */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .radioGroup input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+  }
+
+  .radioGroup input[type="radio"]:checked::before {
+    background: #4a90e2; /* Primary color */
+  }
+
+  .radioGroup label {
+    cursor: pointer;
+    font-weight: normal;
+    color: #fff; /* Text color */
+  }
+  .button {
+    button {
+      display: flex;
+      justify-content: center;
+      padding-block: 10px;
+      width: 100%;
+      background: #121826;
+      color: #6c727f;
+      border: none;
+      border-radius: 22px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      background: #000;
+    }
+  }
+}
