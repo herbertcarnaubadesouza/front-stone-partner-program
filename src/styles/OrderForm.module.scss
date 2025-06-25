@@ -5,8 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Altera para garantir que ocupe a altura total da tela */
-  padding: 20px; /* Adiciona padding para evitar o corte das bordas */
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .content {
@@ -14,140 +14,481 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 600px; /* Define um máximo para a largura do formulário */
+  max-width: 700px;
   height: 100%;
-  max-height: 80vh; /* Define um máximo para a altura do formulário */
-  overflow-y: auto; /* Adiciona rolagem vertical */
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    max-width: 95%;
+    padding: 10px;
+    max-height: 95vh;
+  }
 }
 
 .images {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+
+  img {
+    max-height: 60px;
+    object-fit: contain;
+
+    @media (max-width: 768px) {
+      max-height: 40px;
+    }
+  }
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 50px 0px #000;
+  box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.3);
   background-color: #212936;
-  padding-inline: 40px;
-  border-radius: 50px;
+  padding: 20px 40px 30px;
+  border-radius: 25px;
   overflow-y: auto;
-  h1 {
-    text-align: center;
-    padding-block: 30px;
-    color: #0fcc7d;
-    font-family: Mohave;
-  }
-  button {
-    display: flex;
-    justify-content: center;
-    padding-block: 10px;
-    width: 100%;
-    background: #121826;
-    color: #6c727f;
-    border: none;
-    border-radius: 22px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-top: 50px;
-    margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 15px 20px 25px;
+    border-radius: 20px;
   }
 
-  button:hover {
-    background: #000;
+  &:hover {
+    box-shadow: 0px 6px 60px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 20px 0 30px;
+  color: #0fcc7d;
+  font-family: "Mohave", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    padding: 15px 0 25px;
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    gap: 25px;
+  }
+}
+
+.section {
+  background: rgba(108, 114, 127, 0.1);
+  border-radius: 15px;
+  padding: 25px 20px;
+  border: 1px solid rgba(15, 204, 125, 0.2);
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  &:hover {
+    border-color: rgba(15, 204, 125, 0.4);
+    background: rgba(108, 114, 127, 0.15);
+  }
+}
+
+.sectionTitle {
+  color: #0fcc7d;
+  font-family: "Mohave", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(15, 204, 125, 0.3);
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+  }
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    background: #0fcc7d;
+    margin-right: 10px;
+    border-radius: 2px;
+
+    @media (max-width: 768px) {
+      height: 16px;
+      margin-right: 8px;
+    }
   }
 }
 
 .field {
-  margin-bottom: 28px;
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #fff;
-    font-family: Mohave;
+  margin-bottom: 20px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin-bottom: 18px;
   }
 
-  input,
-  select {
-    width: 100%;
-    padding-block: 12px;
-    border-radius: 22px;
-    background-color: #6c727f;
-    font-family: Mohave;
-    border: none;
-    padding-inline: 20px;
-  }
-  .input::placeholder {
-    font-family: Mohave;
+  .label {
+    display: block;
+    margin-bottom: 8px;
     color: #fff;
-    font-size: 16px;
+    font-family: "Mohave", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
   }
+
+  .input,
+  .select {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    background-color: #6c727f;
+    font-family: "Mohave", sans-serif;
+    border: 2px solid transparent;
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+      padding: 12px 16px;
+      font-size: 15px;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #0fcc7d;
+      background-color: #7a8088;
+      box-shadow: 0 0 0 3px rgba(15, 204, 125, 0.1);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      font-family: "Mohave", sans-serif;
+      color: #d1d5db;
+      font-size: 16px;
+      opacity: 0.8;
+
+      @media (max-width: 768px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .inputError {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.1);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+  }
+
+  .select {
+    cursor: pointer;
+
+    option {
+      background-color: #6c727f;
+      color: #fff;
+    }
+  }
+
   .radioContainer {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
+    margin-top: 8px;
+
+    @media (max-width: 768px) {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
   }
 
   .radioGroup {
     display: flex;
     align-items: center;
-    gap: 1rem;
-  }
+    gap: 8px;
 
-  .radioGroup input[type="radio"] {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #4a90e2; /* Primary color */
-    border-radius: 50%;
-    outline: none;
-    cursor: pointer;
-    position: relative;
-    transition: border-color 0.3s ease;
-  }
-
-  .radioGroup input[type="radio"]::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: transparent;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: background 0.3s ease;
-  }
-
-  .radioGroup input[type="radio"]:checked::before {
-    background: #4a90e2; /* Primary color */
-  }
-
-  .radioGroup label {
-    cursor: pointer;
-    font-weight: normal;
-    color: #fff; /* Text color */
-  }
-  .button {
-    button {
-      display: flex;
-      justify-content: center;
-      padding-block: 10px;
-      width: 100%;
-      background: #121826;
-      color: #6c727f;
-      border: none;
-      border-radius: 22px;
-      font-size: 20px;
+    label {
       cursor: pointer;
-      margin-top: 50px;
-      margin-bottom: 20px;
+      font-weight: normal;
+      color: #fff;
+      font-family: "Mohave", sans-serif;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+      }
+
+      &:hover {
+        background-color: rgba(15, 204, 125, 0.1);
+      }
     }
 
-    button:hover {
-      background: #000;
+    input[type="radio"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #0fcc7d;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+      margin: 0;
+      flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      &:checked::before {
+        background: #0fcc7d;
+      }
+
+      &:hover {
+        border-color: #0fcc7d;
+        box-shadow: 0 0 0 3px rgba(15, 204, 125, 0.1);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
+  }
+}
+
+.errorMessage {
+  display: block;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 6px;
+  font-family: "Mohave", sans-serif;
+  animation: slideIn 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  width: 100%;
+  background: linear-gradient(135deg, #0fcc7d, #0ba968);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Mohave", sans-serif;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 14px 20px;
+    font-size: 1rem;
+    margin-top: 25px;
+  }
+
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0ba968, #0fcc7d);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(15, 204, 125, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+
+  &.loading {
+    background: linear-gradient(135deg, #6c727f, #9ca3af);
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  &.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    animation: successPulse 0.6s ease;
+  }
+
+  &.error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    animation: errorShake 0.6s ease;
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  @media (max-width: 768px) {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes successPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes errorShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Scrollbar Styling */
+.content::-webkit-scrollbar,
+.form::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-track,
+.form::-webkit-scrollbar-track {
+  background: rgba(108, 114, 127, 0.2);
+  border-radius: 4px;
+}
+
+.content::-webkit-scrollbar-thumb,
+.form::-webkit-scrollbar-thumb {
+  background: rgba(15, 204, 125, 0.5);
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(15, 204, 125, 0.7);
+  }
+}
+
+/* Focus visible for accessibility */
+.submitButton:focus-visible,
+.input:focus-visible,
+.select:focus-visible {
+  outline: 2px solid #0fcc7d;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .container {
+    background: none;
+    height: auto;
+  }
+
+  .form {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .section {
+    break-inside: avoid;
   }
 }

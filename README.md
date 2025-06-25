@@ -1,40 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stone Partner Program - Order Form
 
-## Getting Started
+## 🚀 Melhorias Implementadas
 
-First, run the development server:
+Este projeto foi significativamente melhorado com foco em **UX/UI**, **funcionalidade** e **manutenibilidade do código**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### ✨ Principais Melhorias
+
+#### 🔧 **Funcionalidade**
+
+- ✅ **Validação completa de formulário** com feedback em tempo real
+- ✅ **Estados de loading/sucesso/erro** com feedback visual
+- ✅ **Tratamento de envio** com simulação de API
+- ✅ **Reset automático** do formulário após sucesso
+- ✅ **Tipagem TypeScript robusta** com interfaces dedicadas
+
+#### 🎨 **UX/UI**
+
+- ✅ **Organização em seções** para melhor experiência
+- ✅ **Indicação visual de campos obrigatórios** (asterisco)
+- ✅ **Feedback de erro** com mensagens claras
+- ✅ **Estados visuais** para inputs (focus, error, disabled)
+- ✅ **Animações sutis** para melhor interação
+- ✅ **Design responsivo** para mobile e desktop
+- ✅ **Spinner de loading** no botão de envio
+- ✅ **Melhor contraste** e acessibilidade
+
+#### 🔧 **Código**
+
+- ✅ **Handlers otimizados** e mais eficientes
+- ✅ **Hook customizado** para validação reutilizável
+- ✅ **Componentes bem estruturados** e organizados
+- ✅ **Separação de responsabilidades** clara
+- ✅ **Performance otimizada** com useCallback
+
+### 🎯 **Estrutura de Seções**
+
+O formulário agora está organizado em 5 seções claras:
+
+1. **Customer Information** - Dados do cliente
+2. **Item Information** - Informações do produto
+3. **Device Settings** - Configurações do dispositivo
+4. **Payment Settings** - Configurações de pagamento
+5. **Display Settings** - Configurações de exibição
+
+### 🔍 **Validações Implementadas**
+
+- **Nome do cliente**: Obrigatório
+- **Email**: Obrigatório + formato válido
+- **Valor do item**: Obrigatório + maior que 0
+- **Descrição**: Obrigatório
+- **Quantidade**: Obrigatório + maior que 0
+- **Serial do dispositivo**: Obrigatório
+- **Nome de exibição**: Obrigatório
+
+### 📱 **Responsividade**
+
+- Layout otimizado para mobile (< 768px)
+- Campos e botões adaptados para touch
+- Scrollbar customizada
+- Tipografia responsiva
+
+### 🎨 **Melhorias Visuais**
+
+- **Gradientes modernos** nos botões
+- **Efeitos hover** suaves
+- **Bordas e sombras** refinadas
+- **Cores de estado** (sucesso, erro, loading)
+- **Transições suaves** em todos os elementos
+- **Layout mais limpo** e organizado
+
+### 🚀 **Estados do Botão**
+
+- **Idle**: "Create Order" (verde gradient)
+- **Loading**: "Processing..." (cinza + spinner)
+- **Success**: "Order Created Successfully!" (verde + pulse)
+- **Error**: "Failed to Create Order" (vermelho + shake)
+
+### 🛠 **Tecnologias Utilizadas**
+
+- **React** com TypeScript
+- **SCSS Modules** para estilos
+- **Custom Hooks** para lógica reutilizável
+- **CSS Grid/Flexbox** para layouts
+- **CSS Animations** para micro-interações
+
+### 📦 **Estrutura de Arquivos**
+
+```
+src/
+├── pages/
+│   └── index.tsx           # Componente principal do formulário
+├── styles/
+│   └── OrderForm.module.scss # Estilos modernos e responsivos
+├── hooks/
+│   └── useFormValidation.ts  # Hook customizado para validação
+└── README.md               # Documentação das melhorias
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🎯 **Como Usar**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Preencha todos os campos obrigatórios (marcados com \*)
+2. O formulário valida em tempo real conforme você digita
+3. Clique em "Create Order" para enviar
+4. Acompanhe o feedback visual do processo
+5. O formulário é resetado automaticamente após sucesso
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 🔮 **Próximos Passos**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Integração com API real
+- Implementação de múltiplos itens
+- Upload de arquivos/imagens
+- Histórico de pedidos
+- Dashboard administrativo
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Desenvolvido com foco em experiência do usuário e boas práticas de desenvolvimento.**
